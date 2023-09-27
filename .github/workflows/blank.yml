@@ -29,6 +29,7 @@ jobs:
       - name: Github provided variable
         run: echo "Repostiory ${{ github.repository }}"
       - name: Env variable
+        if: failure()
         run: echo "ENV ${{ env.TEST_LEVEL }} LUB $TEST_LEVEL"
 
 
