@@ -22,6 +22,7 @@ jobs:
         run: echo First Job!
   second_job:
     name: Second Job
+    needs: first_job
     runs-on: ubuntu-latest
     steps:
       - name: Second Hello
