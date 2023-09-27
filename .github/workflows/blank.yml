@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Read Variable
         run: echo "API_URL ${{ vars.API_URL }}"
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
       - name: Read Secret
         run: echo "API_TOKEN ${{ secrets.API_TOKEN }}"
       - name: Nonexisting Secret
