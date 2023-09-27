@@ -12,20 +12,23 @@ on:
 
   workflow_dispatch:
 
+env:
+  TEST_LEVEL: NoTest
 
 jobs:
   first_job:
     name: First Job
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
-        run: echo First Job!
-  second_job:
-    name: Second Job
-    needs: first_job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Second Hello
-        run: echo First Job!
+      - name: Read Variable
+        run: echo "API_URL ${{ vars.API_URL }}
+      - name: Read Secret
+        run: echo "API_TOKEN ${{ secrets.API_TOKEN }}
+      - name: Nonexisting Secret
+        run: echo "API_TOKEN ${{ secrets.NON_EXISTING_API_TOKEN }}
+      - name: Github provided variable
+        run: echo "Repostiory ${{ github.repository }}"
+      - name: Env variable
+        run: echo "ENV ${{ env.TEST_LEVEL }} LUB $TEST_LEVEL"
 
 
