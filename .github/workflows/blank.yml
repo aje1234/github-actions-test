@@ -21,11 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
-        run: echo "API_URL ${{ vars.API_URL }}
+        run: echo "API_URL ${{ vars.API_URL }}"
       - name: Read Secret
-        run: echo "API_TOKEN ${{ secrets.API_TOKEN }}
+        run: echo "API_TOKEN ${{ secrets.API_TOKEN }}"
       - name: Nonexisting Secret
-        run: echo "API_TOKEN ${{ secrets.NON_EXISTING_API_TOKEN }}
+        run: echo "API_TOKEN ${{ secrets.NON_EXISTING_API_TOKEN }}"
       - name: Github provided variable
         run: echo "Repostiory ${{ github.repository }}"
       - name: Env variable
