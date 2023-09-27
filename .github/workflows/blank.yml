@@ -20,5 +20,11 @@ jobs:
     steps:
       - name: Hello
         run: echo First Job!
+  second_job:
+    name: Second Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Second Hello
+        run: echo First Job!
 
 
