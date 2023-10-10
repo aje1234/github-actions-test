@@ -6,10 +6,6 @@ on:
 
 run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
 
-concurrency: 
-  group: ${{ github.event.inputs.salesforce-environment }}
-  cancel-in-progress: true
-
 jobs:
   job-1:
     runs-on: ubuntu-latest
