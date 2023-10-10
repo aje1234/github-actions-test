@@ -8,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - name: Fail
-        id: step-2
-        run: exit 1
       - name: Step 1
         run: sleep 90
       - name: Runs on Failure
