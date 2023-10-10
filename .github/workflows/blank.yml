@@ -8,7 +8,7 @@ env:
   myBoolean: ${{ false }}
   myIntegerNumber: ${{ 711 }}
   myFloatNumber: ${{ -9.2 }}
-  myString: ${{ 'Mona the Octocat' }}
+  myString: ${{ 'ABC' }}
   
 jobs:
   first_job:
@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
+        if: $myString == 'ABC'
         run:  | 
           echo ${{ env.myString }}
           echo $myString
