@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
-        run: echo ${{ env.myBoolean }}
+        run: echo ${{ env.myString }}
       - name: Read context variables
         run: |
-          echo '${{ toJson(github) }}'
-          echo '${{ toJson(job) }}'
+          echo ${{ toJson(github) }}
+          echo ${{ toJson(job) }}
           echo '${{ toJson(secrets) }}'
           echo '${{ toJson(steps) }}'
           echo '${{ toJson(runner) }}'
