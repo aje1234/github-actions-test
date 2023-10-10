@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
-        if: $myString == 'ABC'
+        if: env.myString == 'ABC'
         run:  | 
           echo ${{ env.myString }}
           echo $myString
