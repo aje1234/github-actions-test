@@ -17,13 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - name: Set variable
-        id: color-selector
-        run: |
-          echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
-      - name: Read variables
-        run: |
-          echo ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            **Hello MAIN**
+
 
         
       
