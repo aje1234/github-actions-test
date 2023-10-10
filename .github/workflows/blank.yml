@@ -29,7 +29,7 @@ jobs:
         run: |
           echo "newString=Hello" >> "$GITHUB_ENV"
           echo "myString=GHJ" >> "$GITHUB_ENV"
-          MESSAGE=1234
+          MESSAGE='1234'
           echo "$MESSAGE" >> "$GITHUB_ENV"
           
       - name: Read Variable
