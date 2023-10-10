@@ -16,9 +16,9 @@ jobs:
         #default behaviour
         if: success()
         run: echo 'Runs on Success'
-      - name: Runs Allways
-        if: allways()
-        run: echo 'Allways'
+      - name: Runs Always
+        if: always()
+        run: echo 'Always'
       - name: Runs when Cancelled
         if: cancelled()
         run: echo 'Cancelled'
