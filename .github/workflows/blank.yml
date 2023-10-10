@@ -12,16 +12,15 @@ on:
 
 run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
 
+concurrency: concurrency-1
+
 jobs:
   job-1:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
       - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
-        with:
-          message: |
-            Hello world ! :wave:
+        run: sleep 100
 
 
         
