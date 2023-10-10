@@ -13,7 +13,7 @@ on:
 run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
 
 concurrency: 
-  group: concurrency-1
+  group: ${{ github.event.inputs.salesforce-environment }}
   cancel-in-progress: true
 
 jobs:
