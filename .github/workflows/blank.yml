@@ -1,6 +1,4 @@
-
 name: CI
-
 
 on:
   workflow_dispatch:
@@ -12,7 +10,6 @@ env:
   myFloatNumber: ${{ -9.2 }}
   myString: ${{ 'Mona the Octocat' }}
   
-
 jobs:
   first_job:
     name: First Job
