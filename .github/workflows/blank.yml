@@ -6,12 +6,13 @@ on:
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - name: Fail
         id: step-2
         run: exit 1
       - name: Step 1
-        run: sleep 20
+        run: sleep 90
       - name: Runs on Failure
         if: failure() && steps.step-2.conclusion == 'failure'
         run: echo 'Failure'
