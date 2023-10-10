@@ -3,17 +3,15 @@ name: CI
 
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
   workflow_dispatch:
 
 env:
-  TEST_LEVEL: NoTest
+  myNull: ${{ null }}
+  myBoolean: ${{ false }}
+  myIntegerNumber: ${{ 711 }}
+  myFloatNumber: ${{ -9.2 }}
+  myString: Mona the Octocat
+  
 
 jobs:
   first_job:
@@ -21,17 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
-        run: echo "API_URL ${{ vars.API_URL }}"
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.8.1
-      - name: Read Secret
-        run: echo "API_TOKEN ${{ secrets.API_TOKEN }}"
-      - name: Nonexisting Secret
-        run: echo "API_TOKEN ${{ secrets.NON_EXISTING_API_TOKEN }}"
-      - name: Github provided variable
-        run: echo "Repostiory ${{ github.repository }}"
-      - name: Env variable
-        if: failure()
-        run: echo "ENV ${{ env.TEST_LEVEL }} LUB $TEST_LEVEL"
+        run: echo ${{ env.myBoolean }}
+      - name: Read context variables
+        run: |
+          echo '${{ toJson(github) }}'
+          echo '${{ toJson(job) }}'
+          echo '${{ toJson(secrets) }}'
+          echo '${{ toJson(steps) }}'
+          echo '${{ toJson(runner) }}'
+      
 
 
