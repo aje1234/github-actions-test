@@ -3,16 +3,18 @@ name: CI
 on:
   workflow_dispatch:
       inputs:
-        test-level:
+        salesforce-environment:
           type: choice
           description: Specify test level of deployment
           options: 
-            - RunLocalTests
-            - NoTestRun
+            - QA
+            - UAT
 
 run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
 
-concurrency: concurrency-1
+concurrency: 
+  group: concurrency-1
+  cancel-in-progress: true
 
 jobs:
   job-1:
