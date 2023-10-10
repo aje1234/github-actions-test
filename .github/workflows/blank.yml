@@ -27,11 +27,15 @@ jobs:
 
       - name: Set Up Variable
         run: |
+          echo "newString=Hello" >> "$GITHUB_ENV"
           echo "myString=GHJ" >> "$GITHUB_ENV"
-
+          MESSAGE=1234
+          echo "$MESSAGE" >> "$GITHUB_ENV"
+          
       - name: Read Variable
         run:  | 
           echo ${{ env.myString }}
+          echo ${{ env.MESSAGE }}
           
       - name: Read context variables
         run: |
