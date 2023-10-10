@@ -24,6 +24,14 @@ jobs:
           myString: DEF
         run:  | 
           echo ${{ env.myString }}
+
+      - name: Set Up Variable
+        run: |
+          echo "myString=GHJ" >> "$GITHUB_ENV"
+
+      - name: Read Variable
+        run:  | 
+          echo ${{ env.myString }}
           
       - name: Read context variables
         run: |
