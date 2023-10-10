@@ -3,6 +3,8 @@ name: CI
 on:
   workflow_dispatch:
 
+run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
+
 jobs:
   job-1:
     runs-on: ubuntu-latest
