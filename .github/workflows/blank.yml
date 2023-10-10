@@ -17,9 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     steps:
-      - name: Read context variables
+      - name: Set variable
+        id: color-selector
         run: |
-          echo ${{ github.event.inputs.test-level }}
+          echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Read variables
+        run: |
+          echo ${{ steps.color-selector.outputs.SELECTED_COLOR }}
 
         
       
