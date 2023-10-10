@@ -8,11 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fail
+        id: step-2
         run: exit 1
       - name: Step 1
         run: sleep 20
       - name: Runs on Failure
-        if: failure()
+        if: steps.step-2.conclusion == 'fail'
         run: echo 'Failure'
       - name: Runs on Success
         #default behaviour
