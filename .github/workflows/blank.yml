@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read Variable
-        run: echo ${{ env.myString }}
+        run:  | 
+          echo ${{ env.myString }}
+          echo $myString
       - name: Read context variables
         run: |
           echo '${{ toJson(github) }}'
