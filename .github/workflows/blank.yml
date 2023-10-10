@@ -10,7 +10,7 @@ env:
   myBoolean: ${{ false }}
   myIntegerNumber: ${{ 711 }}
   myFloatNumber: ${{ -9.2 }}
-  myString: Mona the Octocat
+  myString: ${{ Mona the Octocat }}
   
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         run: echo ${{ env.myString }}
       - name: Read context variables
         run: |
-          echo ${{ toJson(github) }}
+          echo ${{ github }}
           
       
 
