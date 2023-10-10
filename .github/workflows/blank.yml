@@ -1,14 +1,7 @@
 name: CI
 
 on:
-  workflow_dispatch:
-      inputs:
-        salesforce-environment:
-          type: choice
-          description: Specify test level of deployment
-          options: 
-            - QA
-            - UAT
+  pull_request:
 
 run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }} 
 
@@ -22,7 +15,11 @@ jobs:
     timeout-minutes: 1
     steps:
       - name: Comment PR
-        run: sleep 100
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            Hello world ! :wave:
+
 
 
         
