@@ -19,6 +19,12 @@ jobs:
         run:  | 
           echo ${{ env.myString }}
           echo $myString
+      - name: Read Variable 2
+        env:
+          myString: DEF
+        run:  | 
+          echo ${{ env.myString }}
+          
       - name: Read context variables
         run: |
           echo '${{ toJson(github) }}'
