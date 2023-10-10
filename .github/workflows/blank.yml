@@ -13,7 +13,7 @@ jobs:
       - name: Step 1
         run: sleep 20
       - name: Runs on Failure
-        if: steps.step-2.conclusion == 'fail'
+        if: steps.step-2.conclusion == 'failure'
         run: echo 'Failure'
       - name: Runs on Success
         #default behaviour
