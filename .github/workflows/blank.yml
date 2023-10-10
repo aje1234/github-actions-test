@@ -31,11 +31,13 @@ jobs:
           echo "myString=GHJ" >> "$GITHUB_ENV"
           MESSAGE='1234'
           echo "MESSAGE=$MESSAGE" >> "$GITHUB_ENV"
+          echo "CURRENT_DATE=$(date)" >> "$GITHUB_ENV"
           
       - name: Read Variable
         run:  | 
           echo ${{ env.myString }}
           echo ${{ env.MESSAGE }}
+          echo ${{ env.CURRENT_DATE }}
           
       - name: Read context variables
         run: |
