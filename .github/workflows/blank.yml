@@ -16,7 +16,7 @@ jobs:
       myString: ${{ 'Cde' }}
     steps:
       - name: Step 1
-        run: Sleep 40
+        run: sleep 40
       - name: Failure
         if: failure()
         run: echo "Failure"
