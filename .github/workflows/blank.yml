@@ -17,7 +17,7 @@ jobs:
       myString: ${{ 'Cde' }}
     steps:
       - name: Step 1
-        id: sleep 90
+        run: sleep 90
       - name: Failure
         if: failure() && steps.step-1.conclusion == 'failure'
         run: echo "Failure"
