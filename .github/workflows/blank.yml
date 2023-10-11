@@ -16,16 +16,17 @@ jobs:
       myString: ${{ 'Cde' }}
     steps:
       - name: Step 1
-        run: sleep 40
+        id: step-1
+        run: exit 1
       - name: Failure
-        if: failure()
+        if: steps.step-1.conclusion == 'failure'
         run: echo "Failure"
       - name: Success
         # default
         if: success()
         run: echo "Success"
       - name: Always
-        if: always()
+        if: success() || failure()
         run: echo "Always"
       - name: Cancel
         if: cancelled()
