@@ -12,19 +12,17 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      myString: ${{ 'Cde' }}
     steps:
       - name: Read myString
+        env:
+          myString: ${{ 'Def' }}
+        run: | 
+          echo $myString
+          echo ${{ env.myString }}
+      - name: Read myString 2
         run: | 
           echo $myString
           echo ${{ env.myString }}
 
-      - name: Step 2
-        if: env.myString == 'Abc'
-        run: | 
-          echo '${{ toJson(github) }}'
-          echo '${{ toJson(job) }}'
-          echo '${{ toJson(secrets) }}'
-          echo '${{ toJson(env) }}'
-          echo '${{ toJson(steps) }}'
-          echo '${{ toJson(runner) }}'
