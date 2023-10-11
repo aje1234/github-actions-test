@@ -6,6 +6,13 @@ run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }}
 
 on:
   workflow_dispatch:
+    inputs:
+      test-level:
+        type: choice
+        description: Specify test level of deployment
+        options: 
+          - RunLocalTests
+          - NoTestRun
 
 env:
   myNull: ${{ null }}
