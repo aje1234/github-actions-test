@@ -2,6 +2,8 @@
 
 name: CI
 
+run-name: Salesforce CI/CD ${{ github.ref_name }} by ${{ github.actor }}
+
 on:
   workflow_dispatch:
 
