@@ -12,12 +12,12 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     env:
       myString: ${{ 'Cde' }}
     steps:
       - name: Step 1
-        id: step-1
-        run: exit 1
+        id: sleep 90
       - name: Failure
         if: failure() && steps.step-1.conclusion == 'failure'
         run: echo "Failure"
