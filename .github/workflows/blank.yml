@@ -15,14 +15,20 @@ jobs:
     env:
       myString: ${{ 'Cde' }}
     steps:
-      - name: Read myString
-        env:
-          myString: ${{ 'Def' }}
+      - name: Set Variable
         run: | 
-          echo $myString
-          echo ${{ env.myString }}
-      - name: Read myString 2
+          echo "newString=Hello" >> "$GITHUB_ENV"
+          echo "myString=GEF" >> "$GITHUB_ENV"
+          MESSAGE=ZXC
+          echo "MESSAGE=$MESSAGE" >> "$GITHUB_ENV"
+          echo "CURRENT_DATE=$(date)" >> "$GITHUB_ENV"
+      - name: Read Variables
         run: | 
+          echo $newString
           echo $myString
-          echo ${{ env.myString }}
+          echo $MESSAGE
+          echo ${{ env.MESSAGE }} 
+          echo $CURRENT_DATE
+          
+          
 
