@@ -19,7 +19,7 @@ jobs:
         id: step-1
         run: exit 1
       - name: Failure
-        if: steps.step-1.conclusion == 'failure'
+        if: failure() && steps.step-1.conclusion == 'failure'
         run: echo "Failure"
       - name: Success
         # default
