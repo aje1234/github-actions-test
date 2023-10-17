@@ -4,6 +4,4 @@ on:
           
 jobs:
   call-reusable-workflow:
-    uses: ./.github/workflows/resuable-workflow.yaml@main
-    with:
-        color: 'ABC'
+    uses: ./.github/workflows/resuable-workflow.yaml
