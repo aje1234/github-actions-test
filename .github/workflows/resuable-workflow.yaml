@@ -2,10 +2,10 @@ name: Reusable Workflow
 on:
   workflow_call:
     inputs:
-      name:
+      color:
         description: "Input description"
         type: string
-        default: "Ali"
+        default: "Abc"
         required: false
 
 jobs:
@@ -19,6 +19,6 @@ jobs:
     steps:
       - name: Dispay Github Context
         run: echo '${{ toJSON(github) }}'
-      - name: Display name input
-        run: echo ${{ inputs.name }}
+      - name: Display color input
+        run: echo ${{ inputs.color }}
 
