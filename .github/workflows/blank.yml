@@ -1,15 +1,15 @@
 name: Calling Reusable flow
 on:
-  workflow_dispatch:
-    inputs:  
-      color:
-	 description: "Input color"
-	 type: string
-	 default: 'red'
-	 required: false
+ workflow_dispatch:
+     inputs:  
+       color:
+         description: "Input color"
+         type: string
+         default: 'red'
+         required: false
           
 jobs:
   call-reusable-workflow:
     uses: aje1234/github-actions-reusable/.github/workflows/blank.yaml@main
     with:
-      color: {{ inputs.color }}
+        color: ${{ inputs.color }}
