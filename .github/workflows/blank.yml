@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:  
       color:
-	     description: 'Input color'
-	     type: string
-	     default: 'red'
-	     required: false
+	description: 'Input color'
+	type: string
+	default: 'red'
+	required: false
           
 jobs:
   call-reusable-workflow:
