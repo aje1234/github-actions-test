@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:  
       color:
-	 description: 'Input color'
+	 description: "Input color"
 	 type: string
 	 default: 'red'
 	 required: false
