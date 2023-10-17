@@ -1,4 +1,4 @@
-name: Calling Reusable flow
+name: Calling Reusable Workflow
 on:
  workflow_dispatch:
           
