@@ -1,3 +1,5 @@
+name: Matrix Workflow
+
 on: 
    workflow_dispatch:
 
