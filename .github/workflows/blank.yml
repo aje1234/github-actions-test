@@ -19,7 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Run a multi-line script
+      - name: Select color
+        id: color-selector
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Check selected color
+        run: echo ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+          
