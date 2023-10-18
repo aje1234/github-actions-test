@@ -11,6 +11,8 @@ jobs:
             node-version: [14, 15]
             include:
                - color: green
+               - color: red
+                 os: ubuntu-latest
       runs-on: ${{ matrix.os }}
       steps:
         - uses: actions/setup-node@v3
@@ -18,4 +20,4 @@ jobs:
              node-version: ${{ matrix.node-version }}
         - run:  node -v
         - run: echo '123'
-          if: color == 'green'
+          if: matrix.color == 'green'
