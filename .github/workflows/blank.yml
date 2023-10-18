@@ -13,7 +13,7 @@ on:
               - NoTestRun
 
 concurrency:
-  group: ${{ github.event.inputs.test-level }}
+  group: ${{ github.workflow }}-${{ github.event.inputs.test-level }}
   cancel-in-progress: true
             
 
