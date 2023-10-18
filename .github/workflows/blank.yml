@@ -14,6 +14,7 @@ on:
 
 concurrency:
   group: group-1
+  cancel-in-progress: true
             
 
 jobs:
