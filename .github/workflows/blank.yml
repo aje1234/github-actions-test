@@ -1,0 +1,25 @@
+name: Salesforce CI/CD
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+      inputs:
+          test-level:
+            type: choice
+            description: Specify test level of deployment
+            options: 
+              - RunLocalTests
+              - NoTestRun
+            
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
