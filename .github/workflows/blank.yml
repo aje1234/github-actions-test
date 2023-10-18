@@ -11,6 +11,9 @@ on:
             options: 
               - RunLocalTests
               - NoTestRun
+
+concurrency:
+  group: group-1
             
 
 jobs:
@@ -25,4 +28,5 @@ jobs:
           echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
       - name: Check selected color
         run: echo ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+      - run: sleep 60
           
