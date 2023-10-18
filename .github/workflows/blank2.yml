@@ -1,0 +1,32 @@
+name: Salesforce CI/CD
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+      inputs:
+          test-level:
+            type: choice
+            description: Specify test level of deployment
+            options: 
+              - RunLocalTests
+              - NoTestRun
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.inputs.test-level }}
+  cancel-in-progress: true
+            
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Select color
+        id: color-selector
+        run: |
+          echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Check selected color
+        run: echo ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+      - run: sleep 60
