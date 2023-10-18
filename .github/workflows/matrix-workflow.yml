@@ -16,4 +16,6 @@ jobs:
         - uses: actions/setup-node@v3
           with:
              node-version: ${{ matrix.node-version }}
-        - run:  node-v
+        - run:  node -v
+        - run: echo '123'
+          if: color == 'green'
